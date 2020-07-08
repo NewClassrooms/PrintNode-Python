@@ -124,6 +124,7 @@ class Computers:
             printer=None,
             job_type='pdf',  # PDF|RAW
             title='PrintJob',
+            expire_after=None,
             options=None,
             authentication=None,
             uri=None,
@@ -169,6 +170,9 @@ class Computers:
 
         if authentication is not None:
             printjob_data.update({"authentication": authentication})
+
+        if expire_after is not None:
+            printjob_data.update({"expireAfter": expire_after})
 
         if options is not None:
             printjob_data.update({"options": options})
